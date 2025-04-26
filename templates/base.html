@@ -5,16 +5,49 @@
         <meta name="viewport" content="width=device-width, intial-scale=1" />
         <title>{% block title %}Home{% endblock %}</title>
         <link rel="stylesheet" href="/static/styles.css" />
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                const logo = document.querySelector('.logo-1');
+                const subheading = document.querySelector('.subheading');
+                const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                glitch(logo, 3);
+                glitch(subheading, 2);
+                logo.addEventListener('mouseover', function() {
+                    glitch(logo, 3);
+                })
+                subheading.addEventListener('mouseover', function() {
+                    glitch(subheading, 2);
+                })
+                function glitch(logo, speed){
+                    let iteration = 0;
+                    const interval = setInterval(() =>{
+                        logo.innerText = logo.innerText.split("")
+                        .map((letter, index) => {
+                            if(index < iteration) {
+                                return logo.dataset.value[index];
+                            }
+                            return letters[Math.floor(Math.random() * 26)]
+                        })  
+                        .join("");
+                        if(iteration >= logo.dataset.value.length){
+                            clearInterval(interval);
+                        }
+                        iteration += 1 / speed;
+                    }, 40)
+                    
+                }
+            })
+        </script>
     </head>
     <body>
         <div class="app-header">
             <div class="my-logo">
-                <span class="logo-1">/ Cass /</span> <span class="logo-2">retrobitti.dev</span>
+                <span class="logo-1" data-value=">> Cass">>> Cass </span>
             </div>
             <div class="navigation-links">
-                <a class="navigation" href="/">/ home</a>
-                <a class="navigation" href="/projects">/ projects</a>
-                <a class="navigation" href="/contact">/ contacts</a>
+                <a class="navigation" href="/">>> home</a>
+                <a class="navigation" href="/projects">>> projects</a>
+                <a class="navigation" href="/contact">>> contacts</a>
             </div> 
         </div>
         <div class="content-body">

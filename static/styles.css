@@ -1,16 +1,26 @@
 
+@font-face {
+    font-family: Saiba-45;
+    src: url('/static/fonts/saiba-45/SAIBA-45.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Orbitron;
+    src: url('/static/fonts/Orbitron-VariableFont_wght.ttf') format(truetype);
+}
+
 body {
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    background-color: #17153B;
+    font-family: 'Orbitron';
+    
 }
 .app-header {
     position: fixed;
     top: 0;
-    background-color: #2E236C;
-    color: white;
+    color: rgb(238, 238, 238);
     text-align: center;
     min-width: 100%;
     height: 4em;
@@ -22,8 +32,7 @@ body {
 .app-footer {
     position: fixed;
     bottom: 0;
-    background-color: #2E236C;
-    color: white;
+    color: rgb(238, 238, 238);
     text-align: center;
     min-width: 100%;
     height: 4em;
@@ -35,9 +44,10 @@ body {
 .navigation {
     margin-left: 2em;
     text-decoration: none;
-    color: #C8ACD6;
+    color: rgb(230, 230, 230);
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    text-shadow: 0.05em 0 0 black;
 }
 
 .navigation:hover {
@@ -45,11 +55,63 @@ body {
     text-decoration: line-through;
 }
 
-
-
 .content-body {
-    height: 100vh;
-    background-color:#17153B
+    min-height: 100vh;
+    background-color: rgb(13, 13, 13);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.viewTitle {
+    h1{
+        font-size: 3rem;
+        margin-bottom: 0.1em;
+        margin-top: 0;
+    }
+    p{
+        margin-left: 1em;
+        margin-top: 0;
+    }
+}
+.home-img-box {
+    position: relative;
+    height: 25em;
+    width: 20em;
+    background-color: rgba(44, 44, 44, 0.4);
+    clip-path: polygon(0 0, 95% 0, 100% 5%, 100% 100%, 0 100%);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+.home-img-box img {
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: cover; 
+    display: block;
+}
+.home-img-box:hover {
+    transform: scale(1.05);
+}
+
+.home-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.home-text-box {
+    max-width: 24em;
+    margin: 2em;
+}
+
+.home-content-box {
+    display: flex;
+    flex-direction: row;
 }
 
 .navigation-links {
@@ -66,12 +128,49 @@ body {
 }
 
 .logo-1 {
+    font-family: 'Saiba-45', sans-serif;
     font-weight: bold;
     font-size: 1.4rem;
-    color: #C8ACD6;
+    color: rgb(230, 230, 230);
+    text-shadow: 0.05em 0 0 black;
 }
 
-.logo-2 {
-    margin-left: 0.6rcap;
-    font-size: 1rem;
+.content-box {
+    position: relative;
+    height: 22em;
+    width: 20em;
+    background-color: rgba(44, 44, 44, 0.4);
+    clip-path: polygon(0 0, 95% 0, 100% 5%, 100% 100%, 0 100%);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
 }
+
+.content-box img {
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain; 
+    display: block;
+}
+
+.content-box p {
+    padding-left: 1em;
+}
+
+.content-box:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
